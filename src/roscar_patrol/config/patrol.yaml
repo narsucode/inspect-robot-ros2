@@ -1,0 +1,28 @@
+# 巡检点位配置
+#
+# order: 巡检顺序，必须是 waypoints.yaml 里存在的点位名
+# points: 每个点位的云台预设角度（度）和期望状态（可选，用于自动核对）
+#         pan  水平角度，正值向左（2026-11-02 实测：pan 减小 = 向右）
+#         tilt 俯仰角度，正值向上（tilt 减小 = 向下）
+#         expect 期望识别到的状态：RED / YELLOW / GREEN，不写就只记录不核对
+
+order:
+- A
+- B
+- C
+points:
+  A:
+    pan: -5.9
+    tilt: -4.1
+    inspect: true
+    aim: true
+  B:
+    pan: 17.9
+    tilt: -0.7
+    inspect: true
+    aim: true
+  C:
+    pan: 18.1
+    tilt: -1.9
+    inspect: true
+    aim: true

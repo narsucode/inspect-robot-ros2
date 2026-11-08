@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!-- 机器人描述文件：定义车体结构和各传感器坐标系 -->
+<robot name="roscar">
+  
+  <!-- 地面投影点：导航算法用的"脚"，z=0，代表小车在地面的位置 -->
+  <link name="base_footprint" />
+  
+  <!-- 底盘中心：小车的几何中心，离地 0.076m -->
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <cylinder length="0.12" radius="0.10" />
+      </geometry>
+      <material name="blue">
+        <color rgba="0.1 0.1 1.0 0.5" />
+      </material>
+    </visual>
+  </link>
+  
+  <!-- 底盘关节：把 base_footprint(地面) 和 base_link(底盘中心) 连起来 -->
+  <joint name="base_joint" type="fixed">
+    <parent link="base_footprint" />
+    <child link="base_link" />
+    <origin xyz="0.0 0.0 0.076" rpy="0 0 0" />
+  </joint>
+
+  <!-- 激光雷达：实际安装的传感器 -->
+  <link name="laser">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <cylinder length="0.02" radius="0.02" />
+      </geometry>
+      <material name="black">
+        <color rgba="0.0 0.0 0.0 0.5" />
+      </material>
+    </visual>
+  </link>
+  
+  <!-- 雷达关节：雷达装在底盘上 -->
+  <joint name="laser_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="laser" />
+    <origin xyz="0 0 0.075" rpy="0 0 0" />
+  </joint>
+
+  <!-- IMU：安装在底盘上 -->
+  <link name="imu_link" />
+  <joint name="imu_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="imu_link" />
+    <origin xyz="0.0 0.0 0.08" rpy="0 0 0" />
+  </joint>
+
+</robot>
