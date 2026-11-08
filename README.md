@@ -196,7 +196,7 @@ idf.py -p /dev/ttyUSB0 flash
 ## 演示
 
 <!-- 视频链接 -->
-B 站：https://www.bilibili.com/video/BVxxxxxx
+B 站：https://www.bilibili.com/video/BV1LUWJ6yEtp
 
 ---
 
