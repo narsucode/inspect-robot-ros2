@@ -156,7 +156,7 @@ ros2 launch roscar_patrol patrol_gui.launch.py
 
 ### 下位机
 
-下位机固件在单独仓库：[inspect-robot-firmware](https://github.com/你的用户名/inspect-robot-firmware)
+下位机固件在单独仓库：[inspect-robot-firmware](https://github.com/narsucode/inspect-robot-firmware)
 
 ```bash
 cd patrol_car
